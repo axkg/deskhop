@@ -69,7 +69,8 @@ void wipe_config_hotkey_handler(device_t *state) {
 }
 
 void screensaver_hotkey_handler(device_t *state) {
-    state->config.screensaver_enabled ^= 1;
+    // TODO: Alternating behaviour on asymmetric setups is probably not desirable
+    state->config.screensaver_enabled = 0x3 & ~state->config.screensaver_enabled;
     send_value(state->config.screensaver_enabled, SCREENSAVER_MSG);
 }
 

@@ -28,5 +28,5 @@ const config_t default_config = {
             .screen_count = 1,
             .screen_index = 0,
         },
-    .screensaver_enabled = SCREENSAVER_ENABLED,
+    .screensaver_enabled = (OUTPUT_A_SCREENSAVER_ENABLED << PICO_A) | (OUTPUT_B_SCREENSAVER_ENABLED << PICO_B),
 };

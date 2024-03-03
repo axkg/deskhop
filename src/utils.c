@@ -116,8 +116,13 @@ void screensaver_task(device_t *state) {
     static int dx = 20;
     static int dy = 25;
 
-    /* If we're not enabled, nothing to do here. */
-    if (!state->config.screensaver_enabled)
+    /* If screensaver is not enabled for this board, nothing to do here. */
+    if (!(state->config.screensaver_enabled & (1 << BOARD_ROLE)))
+        return;
+
+    /* Check whether screensaver mode applies */
+    if ((CURRENT_BOARD_IS_ACTIVE_OUTPUT && (SCREENSAVER_MODE == 2)) ||
+        (!CURRENT_BOARD_IS_ACTIVE_OUTPUT && (SCREENSAVER_MODE == 1)))
         return;
 
     /* We are enabled, but idle time still too small to activate. */

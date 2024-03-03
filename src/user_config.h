@@ -64,10 +64,14 @@
  * mouse cursor starts moving around like a bouncy-ball in pong. No clicking, of course.
  * Move mouse on that active output to stop.
  *
- * SCREENSAVER_ENABLED: [0 or 1] 0 means screensaver is disabled, 1 means it is enabled.
+ * OUTPUT_A_SCREENSAVER_ENABLED: [0 or 1] 0 means screensaver is disabled for output A, 1 means it is enabled.
+ * OUTPUT_B_SCREENSAVER_ENABLED: [0 or 1] 0 means screensaver is disabled for output A, 1 means it is enabled.
  * SCREENSAVER_TIME_SEC: time in seconds
+ * SCREENSAVER_MODE: [0, 1 or 2] 0 means always, 1 only when output is active, 2 only when passive
  *
  * */
 
-#define SCREENSAVER_ENABLED  0
+#define OUTPUT_A_SCREENSAVER_ENABLED  0
+#define OUTPUT_B_SCREENSAVER_ENABLED  0
+#define SCREENSAVER_MODE 0
 #define SCREENSAVER_TIME_SEC 240
